@@ -1,41 +1,26 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:doctor_chamber/Pages/ForgetPass/forget.dart';
-import 'package:doctor_chamber/Pages/Sign_Up/sign_up_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'Components/Banner.dart';
-import 'Components/email.dart';
-import 'Components/login_button.dart';
+import 'components/RBanner.dart';
+import 'components/reset_button.dart';
 
 // ignore: use_key_in_widget_constructors
-class MyLoginScreen extends StatefulWidget {
+class Reset_Pass_test extends StatefulWidget {
   @override
-  State<MyLoginScreen> createState() => _MyLoginScreenState();
+  State<Reset_Pass_test> createState() => _Reset_Pass_testState();
 }
 
-class _MyLoginScreenState extends State<MyLoginScreen> {
-  late TextEditingController _emailController;
+class _Reset_Pass_testState extends State<Reset_Pass_test> {
   late TextEditingController _passController;
   final _formkey = GlobalKey<FormState>();
   @override
   void initState() {
-    _emailController = TextEditingController();
     _passController = TextEditingController();
 
     // ignore: todo
     // TODO: implement initState
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passController.dispose();
-    // ignore: todo
-    // TODO: implement dispose
-    super.dispose();
   }
 
   bool rememberpwd = false;
@@ -59,13 +44,13 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
         backgroundColor: Color(0xff555FD2),
         toolbarHeight: 30.0,
         centerTitle: true,
-        title: Text('Sign In'),
+        title: Text('Reset Password'),
       ),
       body: SingleChildScrollView(
         controller: null,
         child: Column(
           children: [
-            Logo(),
+            RBanner(),
             SizedBox(
               height: 20.0,
             ),
@@ -78,10 +63,6 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
                     key: _formkey,
                     child: Column(
                       children: <Widget>[
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                        Email_feild(emailController: _emailController),
                         SizedBox(
                           height: 20.0,
                         ),
@@ -103,7 +84,7 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
                               },
                               icon: sec ? visableoff : visable,
                             ),
-                            hintText: "Password",
+                            hintText: "Enter New Password",
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(
                                 10.0,
@@ -114,112 +95,57 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
                         SizedBox(
                           height: 20.0,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            buildRememberassword(),
-                            buildForgetPassword(context),
-                          ],
-                        ),
-                        LoginButton(
-                            formkey: _formkey,
-                            emailController: _emailController,
-                            passController: _passController),
-                        SizedBox(height: 10.0),
-                        Row(
-                          children: <Widget>[
-                            Expanded(
-                              // ignore: unnecessary_new
-                              child: new Container(
-                                  margin: const EdgeInsets.only(
-                                      left: 10.0, right: 15.0),
-                                  child: Divider(
-                                    color: Colors.black,
-                                    height: 50,
-                                  )),
+                        TextFormField(
+                          obscureText: sec,
+                          controller: _passController,
+                          validator: (val) => val!.length < 6
+                              ? "Enter more than 6 digit charecter"
+                              : null,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.vpn_key,
                             ),
-                            Text("OR"),
-                            Expanded(
-                              // ignore: unnecessary_new
-                              child: new Container(
-                                margin: const EdgeInsets.only(
-                                    left: 15.0, right: 10.0),
-                                child: Divider(
-                                  color: Colors.black,
-                                  height: 50,
-                                ),
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  sec = !sec;
+                                });
+                              },
+                              icon: sec ? visableoff : visable,
+                            ),
+                            hintText: "Confirm your Password",
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(
+                                10.0,
                               ),
                             ),
-                          ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        RestButton(
+                          formkey: _formkey,
+                          passController: _passController,
                         ),
                         SizedBox(height: 10.0),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            buildFacebook(),
-                            SizedBox(
-                              width: 20.0,
-                            ),
-                            buildGoogle(),
-                            SizedBox(
-                              width: 20.0,
-                            ),
-                            buildTwitter()
-                          ],
-                        ),
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-            Stack(
-              children: <Widget>[
-                Image(
-                  fit: BoxFit.cover,
-                  height: 170.0,
-                  width: double.infinity,
-                  // ignore: prefer_const_constructors
-                  image: AssetImage(
-                    "assets/images/Sign_in_1.jpg",
-                  ),
+            Padding(
+              padding: const EdgeInsets.only(top: 90.0),
+              child: Image(
+                fit: BoxFit.cover,
+                height: 175.0,
+                width: double.infinity,
+                // ignore: prefer_const_constructors
+                image: AssetImage(
+                  "assets/images/Sign_in_1.jpg",
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 60.0),
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SignUp_Page()));
-                    },
-                    child: Center(
-                      child: RichText(
-                        text: TextSpan(
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: 'Don’t have an account? ',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15.0,
-                              ),
-                            ),
-                            TextSpan(
-                              text: '  Register Now. ',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 15.0,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ],
         ),

@@ -1,20 +1,19 @@
 // ignore_for_file: prefer_const_constructors, camel_case_types, avoid_print
-import 'package:doctor_chamber/Pages/Home/home.dart';
 import 'package:flutter/material.dart';
 
-class LoginButton extends StatelessWidget {
-  const LoginButton({
+class RestButton extends StatelessWidget {
+  const RestButton({
     Key? key,
     required GlobalKey<FormState> formkey,
-    required TextEditingController emailController,
+
     required TextEditingController passController,
   })  : _formkey = formkey,
-        _emailController = emailController,
+  
         _passController = passController,
         super(key: key);
 
   final GlobalKey<FormState> _formkey;
-  final TextEditingController _emailController;
+
   final TextEditingController _passController;
 
   @override
@@ -40,10 +39,10 @@ class LoginButton extends StatelessWidget {
       ),
       onPressed: () {
         if (_formkey.currentState!.validate()) {
-          print("Email: ${_emailController.text}");
+     
           print("password: ${_passController.text}");
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => MyHomePage()));
+          // Navigator.push(context,
+          //     MaterialPageRoute(builder: (context) => SignUp_Page()));
         }
       },
     );

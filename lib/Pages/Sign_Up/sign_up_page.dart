@@ -1,28 +1,29 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:doctor_chamber/Pages/ForgetPass/forget.dart';
-import 'package:doctor_chamber/Pages/Sign_Up/sign_up_page.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:doctor_chamber/Pages/Login/loginpage.dart';
 import 'package:flutter/material.dart';
-
-import 'Components/Banner.dart';
 import 'Components/email.dart';
-import 'Components/login_button.dart';
+import 'components/SUBanner.dart';
+import 'components/name.dart';
+import 'components/sign_up_button.dart';
 
 // ignore: use_key_in_widget_constructors
-class MyLoginScreen extends StatefulWidget {
+class SignUp_Page extends StatefulWidget {
   @override
-  State<MyLoginScreen> createState() => _MyLoginScreenState();
+  State<SignUp_Page> createState() => _SignUp_PageState();
 }
 
-class _MyLoginScreenState extends State<MyLoginScreen> {
+class _SignUp_PageState extends State<SignUp_Page> {
   late TextEditingController _emailController;
   late TextEditingController _passController;
+  late TextEditingController _nameController;
   final _formkey = GlobalKey<FormState>();
   @override
   void initState() {
     _emailController = TextEditingController();
     _passController = TextEditingController();
+    _nameController = TextEditingController();
 
     // ignore: todo
     // TODO: implement initState
@@ -33,6 +34,7 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
   void dispose() {
     _emailController.dispose();
     _passController.dispose();
+    _nameController.dispose();
     // ignore: todo
     // TODO: implement dispose
     super.dispose();
@@ -59,13 +61,13 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
         backgroundColor: Color(0xff555FD2),
         toolbarHeight: 30.0,
         centerTitle: true,
-        title: Text('Sign In'),
+        title: Text('Sign Up'),
       ),
       body: SingleChildScrollView(
         controller: null,
         child: Column(
           children: [
-            Logo(),
+            SUBanner(),
             SizedBox(
               height: 20.0,
             ),
@@ -81,9 +83,43 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
                         SizedBox(
                           height: 20.0,
                         ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "User Name",
+                            style: TextStyle(fontSize: 20.0),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Name_feild(nameController: _nameController),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Email",
+                            style: TextStyle(fontSize: 20.0),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
                         Email_feild(emailController: _emailController),
                         SizedBox(
-                          height: 20.0,
+                          height: 10.0,
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Password",
+                            style: TextStyle(fontSize: 20.0),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10.0,
                         ),
                         TextFormField(
                           obscureText: sec,
@@ -114,58 +150,11 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
                         SizedBox(
                           height: 20.0,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            buildRememberassword(),
-                            buildForgetPassword(context),
-                          ],
-                        ),
-                        LoginButton(
-                            formkey: _formkey,
-                            emailController: _emailController,
-                            passController: _passController),
-                        SizedBox(height: 10.0),
-                        Row(
-                          children: <Widget>[
-                            Expanded(
-                              // ignore: unnecessary_new
-                              child: new Container(
-                                  margin: const EdgeInsets.only(
-                                      left: 10.0, right: 15.0),
-                                  child: Divider(
-                                    color: Colors.black,
-                                    height: 50,
-                                  )),
-                            ),
-                            Text("OR"),
-                            Expanded(
-                              // ignore: unnecessary_new
-                              child: new Container(
-                                margin: const EdgeInsets.only(
-                                    left: 15.0, right: 10.0),
-                                child: Divider(
-                                  color: Colors.black,
-                                  height: 50,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10.0),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            buildFacebook(),
-                            SizedBox(
-                              width: 20.0,
-                            ),
-                            buildGoogle(),
-                            SizedBox(
-                              width: 20.0,
-                            ),
-                            buildTwitter()
-                          ],
+                        SignUp_Button(
+                          formkey: _formkey,
+                          emailController: _emailController,
+                          passController: _passController,
+                          nameController: _nameController,
                         ),
                       ],
                     ),
@@ -188,10 +177,7 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
                   padding: EdgeInsets.only(top: 60.0),
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SignUp_Page()));
+                      Navigator.pop(context);
                     },
                     child: Center(
                       child: RichText(
@@ -199,14 +185,14 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
                           // ignore: prefer_const_literals_to_create_immutables
                           children: <TextSpan>[
                             TextSpan(
-                              text: 'Don’t have an account? ',
+                              text: 'Already have an account?',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 15.0,
                               ),
                             ),
                             TextSpan(
-                              text: '  Register Now. ',
+                              text: '  Sign In ',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -274,39 +260,6 @@ class _MyLoginScreenState extends State<MyLoginScreen> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget buildFacebook() {
-    return Container(
-      height: 30,
-      width: 30,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Image.asset("assets/logo/facebook.png"),
-    );
-  }
-
-  Widget buildGoogle() {
-    return Container(
-      height: 30,
-      width: 30,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Image.asset("assets/logo/search.png"),
-    );
-  }
-
-  Widget buildTwitter() {
-    return Container(
-      height: 30,
-      width: 30,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Image.asset("assets/logo/twitter.png"),
     );
   }
 }

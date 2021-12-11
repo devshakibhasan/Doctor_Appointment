@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, duplicate_ignore
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, duplicate_ignore, file_names
 
 import 'package:flutter/material.dart';
 
-class Logo extends StatelessWidget {
-  const Logo({
+class EBanner extends StatelessWidget {
+  const EBanner({
     Key? key,
   }) : super(key: key);
 
@@ -26,18 +26,28 @@ class Logo extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "Welcome Back!",
+                  "Get Your Code",
                   style: TextStyle(
+                    color: Color(0xff555FD2),
+                    fontWeight: FontWeight.w700,
                     fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff555fd2),
                   ),
                 ),
+                SizedBox(
+                  height: 10.0,
+                ),
                 Text(
-                  "Sign in to continue.",
+                  "Please enter the 4 digit code sent",
                   style: TextStyle(
                     fontSize: 15.0,
                     color: Color(0xff172331),
+                  ),
+                ),
+                Text(
+                  "to your email address.",
+                  style: TextStyle(
+                    color: Color(0xff172331),
+                    fontSize: 15.0,
                   ),
                 ),
               ],

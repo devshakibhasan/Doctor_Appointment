@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors, camel_case_types, avoid_print
-
-import 'package:doctor_chamber/Pages/Home/test.dart';
+// ignore: unused_import
+import 'package:doctor_chamber/Pages/Mail%20Varification/email_varification.dart';
 import 'package:flutter/material.dart';
-
-import 'email_varification.dart';
 
 class ForgetPassButton extends StatelessWidget {
   const ForgetPassButton({
@@ -28,12 +26,16 @@ class ForgetPassButton extends StatelessWidget {
         height: 50.0,
         width: double.infinity,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(20.0),
+          // ignore: prefer_const_literals_to_create_immutables
+          gradient: LinearGradient(
             // ignore: prefer_const_literals_to_create_immutables
-            gradient: LinearGradient(colors: [
+            colors: [
               Color(0xff555FD2),
               Color(0xff555FD2),
-            ])),
+            ],
+          ),
+        ),
         padding: const EdgeInsets.all(0),
         child: Text(
           "Recover Password",

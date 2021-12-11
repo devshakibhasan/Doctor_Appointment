@@ -1,9 +1,10 @@
 // ignore_for_file: prefer_const_constructors, camel_case_types, avoid_print
-import 'package:doctor_chamber/Pages/Home/home.dart';
+import 'package:doctor_chamber/Pages/Rest%20Password/resetpage.dart';
 import 'package:flutter/material.dart';
+import '../email_varification.dart';
 
-class LoginButton extends StatelessWidget {
-  const LoginButton({
+class MYVarifyButton extends StatelessWidget {
+  const MYVarifyButton({
     Key? key,
     required GlobalKey<FormState> formkey,
     required TextEditingController emailController,
@@ -33,17 +34,15 @@ class LoginButton extends StatelessWidget {
             ])),
         padding: const EdgeInsets.all(0),
         child: Text(
-          "Log in",
+          "Verify and Proceed",
           textAlign: TextAlign.center,
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
       onPressed: () {
         if (_formkey.currentState!.validate()) {
-          print("Email: ${_emailController.text}");
-          print("password: ${_passController.text}");
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => MyHomePage()));
+              MaterialPageRoute(builder: (context) => Reset_Pass_test()));
         }
       },
     );

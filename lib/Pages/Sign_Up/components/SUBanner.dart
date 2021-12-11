@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class Logo extends StatelessWidget {
-  const Logo({
+class SUBanner extends StatelessWidget {
+  const SUBanner({
     Key? key,
   }) : super(key: key);
 
@@ -26,20 +26,14 @@ class Logo extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "Welcome Back!",
+                  "Sign up to continue.",
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff555fd2),
+                    color: Color(0xff000000),
                   ),
                 ),
-                Text(
-                  "Sign in to continue.",
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: Color(0xff172331),
-                  ),
-                ),
+                
               ],
             ),
           ),

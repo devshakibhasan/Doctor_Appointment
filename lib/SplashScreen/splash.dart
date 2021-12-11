@@ -36,29 +36,23 @@ class _MySplashScreenState extends State<MySplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        color: Color(0xff656FD7),
         constraints: BoxConstraints.expand(),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(
-              'assets/images/splash.png',
-            ),
-            fit: BoxFit.fill,
-          ),
-        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // logo here
             Image.asset(
-              'assets/logo/app_logo.png',
-              height: 180.0,
+              'assets/images/splash_1.jpg',
+              height: 250.0,
             ),
             SizedBox(
-              height: 20.0,
+              height: 40.0,
             ),
             Text(
-              'Movie Theater',
+              'Doctor Appointment',
               style: TextStyle(
+                fontWeight: FontWeight.bold,
                 fontSize: 30.0,
                 color: Colors.white,
               ),
@@ -67,7 +61,9 @@ class _MySplashScreenState extends State<MySplashScreen> {
               height: 40.0,
             ),
             CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              valueColor: AlwaysStoppedAnimation<Color>(
+                Colors.white,
+              ),
             )
           ],
         ),
