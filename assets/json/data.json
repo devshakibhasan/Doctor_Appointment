@@ -1,0 +1,60 @@
+{
+    "doctors" : [
+        {
+            "id" : 1,
+            "image": "assets/images/doctor_1.png",
+            "name":  "Dr. Jenny Roy",
+            "job": "Heart Surgeon",
+            "price": "600tk"
+            
+        },
+        {
+            "id" : 2,
+            "image": "assets/images/doctor_2.png",
+            "name":  "Dr. Tanisha Khan",
+            "job": "Orthopaedic",
+            "price": "500tk"
+            
+        },
+        {
+            "id" : 3,
+            "image": "assets/images/doctor_3.png",
+            "name":  "Dr. Zak Wolf",
+            "job": "Cardiologist",
+            "price": "700tk"
+            
+        },
+        {
+            "id" : 4,
+            "image": "assets/images/doctor_4.png",
+            "name":  "Dr. Iva Karpenter",
+            "job": "Dentist",
+            "price": "500tk"
+            
+        },
+        {
+            "id" : 5,
+            "image": "assets/images/doctor_4.png",
+            "name":  "Dr. Daniels",
+            "job": "Heart Surgeon",
+            "price": "700tk"
+            
+        },
+        {
+            "id" : 6,
+            "image": "assets/images/doctor_4.png",
+            "name":  "Dr. Mayme Gomez",
+            "job": "Heart Surgeon",
+            "price": "700tk"
+            
+        },
+        {
+            "id" : 7,
+            "image": "assets/images/doctor_4.png",
+            "name":  "Dr. Jhonshon",
+            "job": "Dentist",
+            "price": "600tk"
+            
+        }
+    ]
+}

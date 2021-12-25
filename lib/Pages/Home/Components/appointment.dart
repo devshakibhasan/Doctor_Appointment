@@ -14,12 +14,15 @@ class appointment extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: const Color(0xffE3EBF4),
+        backgroundColor: const Color(0xff555FD2),
         centerTitle: true,
         title: Text(
-          'Search Doctors',
+          'Appointments',
           style: new TextStyle(
-              fontSize: 20.0, fontWeight: FontWeight.w500, color: Colors.black),
+            fontSize: 20.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.white,
+          ),
         ),
       ),
       body: Container(
@@ -75,7 +78,7 @@ class appointment extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                 SizedBox(
+                                SizedBox(
                                   height: 10.0,
                                 ),
                                 // ignore: prefer_const_constructors
@@ -88,7 +91,7 @@ class appointment extends StatelessWidget {
                                 SizedBox(
                                   height: 10.0,
                                 ),
-                                 SizedBox(
+                                SizedBox(
                                   height: 10.0,
                                 ),
                                 // ignore: prefer_const_constructors
@@ -101,7 +104,7 @@ class appointment extends StatelessWidget {
                                 SizedBox(
                                   height: 10.0,
                                 ),
-                                 SizedBox(
+                                SizedBox(
                                   height: 10.0,
                                 ),
                                 // ignore: prefer_const_constructors

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore, use_key_in_widget_constructors
 
 import 'dart:async';
+import 'package:doctor_chamber/Pages/Home/home.dart';
 import 'package:doctor_chamber/Pages/Login/loginpage.dart';
 import 'package:doctor_chamber/Pages/Onboarding_page/onboard.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,8 @@ class _MySplashScreenState extends State<MySplashScreen> {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       isviewed = prefs.getInt('onBoard');
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (_) => isviewed != 0 ? OnBoard() : MyLoginScreen()));
+          builder: (BuildContext context) =>
+              isviewed != 0 ? OnBoard() : MyHomePage()));
     });
   }
 

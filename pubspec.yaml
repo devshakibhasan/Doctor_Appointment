@@ -37,6 +37,8 @@ dependencies:
   shared_preferences: ^2.0.9
   dio: ^4.0.4
   carousel_pro_nullsafety: ^1.0.2
+  http: 
+
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +66,7 @@ flutter:
   assets:
     - assets/images/
     - assets/logo/
+    - assets/json/data.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
