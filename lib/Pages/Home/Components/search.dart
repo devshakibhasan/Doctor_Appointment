@@ -44,7 +44,27 @@ class SearchDoctor extends StatelessWidget {
                             child: Column(
                               children: [
                                 // ignore: prefer_const_constructors
-                                Image.asset('assets/images/search_sec.png'),
+                                Container(
+                                  width: double.infinity,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                          prefixIcon: Icon(Icons.search),
+                                          suffixIcon: IconButton(
+                                            icon: Icon(Icons.clear),
+                                            onPressed: () {
+                                              /* Clear the search field */
+                                            },
+                                          ),
+                                          hintText: 'Search...',
+                                          border: InputBorder.none),
+                                    ),
+                                  ),
+                                ),
                                 SizedBox(
                                   height: 40.0,
                                 ),

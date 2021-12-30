@@ -14,6 +14,8 @@ class DoctorList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // ignore: prefer_const_constructors
+      padding: EdgeInsets.only(bottom: 10.0),
       height: 100.0,
       width: double.infinity,
       child: Card(
@@ -22,9 +24,11 @@ class DoctorList extends StatelessWidget {
             right: 8.0,
           ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -33,6 +37,7 @@ class DoctorList extends StatelessWidget {
                     ),
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(

@@ -49,32 +49,23 @@ class TopContainer extends StatelessWidget {
                   height: 20.0,
                 ),
                 Container(
-                  height: 50.0,
-                  color: const Color(0xff555FD2),
-                  child: Card(
+                  width: double.infinity,
+                  height: 40,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5)),
+                  child: Center(
                     child: TextField(
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const SearchPage())),
-                      style: const TextStyle(
-                        backgroundColor: Colors.white,
-                      ),
                       decoration: InputDecoration(
-                          prefixIcon: const Icon(
-                            Icons.search,
-                            color: Colors.black,
-                          ),
+                          prefixIcon: Icon(Icons.search),
                           suffixIcon: IconButton(
-                            
-                            icon: const Icon(
-                              Icons.clear,
-                              color: Colors.black,
-                            ),
+                            icon: Icon(Icons.clear),
                             onPressed: () {
                               /* Clear the search field */
                             },
                           ),
                           hintText: 'Search...',
-                          hintStyle: const TextStyle()),
+                          border: InputBorder.none),
                     ),
                   ),
                 ),

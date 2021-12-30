@@ -3,6 +3,7 @@ import 'package:doctor_chamber/Pages/Home/Components/doctor_list.dart';
 import 'package:flutter/material.dart';
 import 'Components/appointment.dart';
 import 'Components/catagories.dart';
+import 'Components/profile.dart';
 import 'Components/search.dart';
 import 'Components/top_container.dart';
 import 'Components/top_doctor.dart';
@@ -151,6 +152,8 @@ class _MyHomePageState extends State<MyHomePage> {
     SearchDoctor(),
 
     appointment(),
+
+    Profile(),
   ];
 
   void _onItemTapped(int index) {

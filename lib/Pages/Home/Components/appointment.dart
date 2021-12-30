@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, duplicate_ignore
 
+import 'package:doctor_chamber/Pages/Home/Data/data.dart';
 import 'package:flutter/material.dart';
 
 import '../search_page.dart';
@@ -40,7 +41,7 @@ class appointment extends StatelessWidget {
                       [
                         Container(
                           color: Color(0xffE3EBF4),
-                          height: 1300,
+                          height: 620.0,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
                             child: Column(
@@ -55,18 +56,20 @@ class appointment extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                DoctorAppointment(
+                                  image: "assets/images/doctor_1.png",
+                                  name: "Dr. Jenny Roy",
+                                  job: "Heart Surgeon",
+                                  time: "11:30 pm - 12: 30pm",
+                                ),
                                 SizedBox(
                                   height: 10.0,
                                 ),
-                                // ignore: prefer_const_constructors
-                                Image.asset('assets/images/dr.tanisha.png'),
-                                SizedBox(
-                                  height: 10.0,
-                                ),
-                                Image.asset('assets/images/dr.zak.png'),
-                                // ignore: prefer_const_constructors
-                                SizedBox(
-                                  height: 10.0,
+                                DoctorAppointment(
+                                  image: "assets/images/doctor_2.png",
+                                  name: "Dr. Zak Wolf",
+                                  job: "Cardiologist",
+                                  time: "10:30 pm - 11: 30pm",
                                 ),
                                 Align(
                                   alignment: Alignment.topLeft,
@@ -82,38 +85,22 @@ class appointment extends StatelessWidget {
                                   height: 10.0,
                                 ),
                                 // ignore: prefer_const_constructors
-                                Image.asset('assets/images/dr.jhonson.png'),
-                                SizedBox(
-                                  height: 10.0,
-                                ),
-                                Image.asset('assets/images/dr.mayme.png'),
-                                // ignore: prefer_const_constructors
-                                SizedBox(
-                                  height: 10.0,
+                                DoctorAppointment(
+                                  image: "assets/images/doctor_3.png",
+                                  name: "Dr. Iva Karpenter",
+                                  job: "Cardiologist",
+                                  time: "09:30 pm - 10: 30pm",
                                 ),
                                 SizedBox(
                                   height: 10.0,
                                 ),
-                                // ignore: prefer_const_constructors
-                                Image.asset('assets/images/dr.tanisha.png'),
-                                SizedBox(
-                                  height: 10.0,
+                                DoctorAppointment(
+                                  image: "assets/images/doctor_4.png",
+                                  name: "Dr. Mayme Gomez",
+                                  job: "Cardiologist",
+                                  time: "10:30 pm - 11: 30pm",
                                 ),
-                                Image.asset('assets/images/dr.zak.png'),
-                                // ignore: prefer_const_constructors
-                                SizedBox(
-                                  height: 10.0,
-                                ),
-                                SizedBox(
-                                  height: 10.0,
-                                ),
-                                // ignore: prefer_const_constructors
-                                Image.asset('assets/images/dr.tanisha.png'),
-                                SizedBox(
-                                  height: 10.0,
-                                ),
-                                Image.asset('assets/images/dr.zak.png'),
-                                // ignore: prefer_const_constructors
+
                                 SizedBox(
                                   height: 10.0,
                                 ),

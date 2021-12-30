@@ -38,6 +38,7 @@ dependencies:
   dio: ^4.0.4
   carousel_pro_nullsafety: ^1.0.2
   http: 
+  expandable: ^5.0.1
 
 
 dev_dependencies:
