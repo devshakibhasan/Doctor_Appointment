@@ -111,11 +111,6 @@ class _ProfileState extends State<Profile> {
                           child: Column(
                             children: [
                               ListTile(
-                                leading: Icon(Icons.person),
-                                trailing: Icon(Icons.arrow_right),
-                                title: Text("Profile Setting"),
-                              ),
-                              ListTile(
                                 leading: Icon(Icons.notifications),
                                 trailing: Icon(Icons.arrow_right),
                                 title: Text("Notifications"),

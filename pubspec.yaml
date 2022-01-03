@@ -39,6 +39,8 @@ dependencies:
   carousel_pro_nullsafety: ^1.0.2
   http: 
   expandable: ^5.0.1
+  geolocator: 
+  geocoding: 
 
 
 dev_dependencies:
