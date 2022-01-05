@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class DoctorList extends StatelessWidget {
@@ -87,12 +89,14 @@ class DoctorList extends StatelessWidget {
                   ),
                   ConstrainedBox(
                     constraints:
-                        BoxConstraints.tightFor(width: 70.0, height: 25.0),
+                        BoxConstraints.tightFor(width: 100.0, height: 25.0),
                     child: ElevatedButton(
-                      child: Text(
-                        "Book",
-                        style: TextStyle(
-                          color: Colors.white,
+                      child: Center(
+                        child: Text(
+                          "Book Now",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       onPressed: () {},

@@ -8,16 +8,12 @@ import 'Components/search.dart';
 import 'Components/top_container.dart';
 import 'Components/top_doctor.dart';
 
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-
-
-
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
@@ -57,7 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ),
-
                 actions: [
                   IconButton(
                     onPressed: () {},
@@ -67,7 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ],
-              
               ), // Anther sliver widget: SliverList
               SliverList(
                 delegate: SliverChildListDelegate(
@@ -126,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   DoctorList(
                                     image: "assets/images/doctor_4.png",
                                     name: "Dr. Mayme Gomez",
-                                    job: "Cardiologist",
+                                    job: "Dentist",
                                     price: "600tk",
                                   ),
                                   DoctorList(
